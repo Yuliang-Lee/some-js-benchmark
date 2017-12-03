@@ -1,0 +1,28 @@
+{
+  "name": "some-js-benchmark",
+  "version": "1.0.0",
+  "description": "collect js benchmarks",
+  "main": "index.js",
+  "dependencies": {
+    "beautify-benchmark": "^0.2.4",
+    "benchmark": "^2.1.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yuliang-Lee/some-js-benchmark.git"
+  },
+  "keywords": [
+    "js",
+    "benchmark"
+  ],
+  "author": "xlaoyu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Yuliang-Lee/some-js-benchmark/issues"
+  },
+  "homepage": "https://github.com/Yuliang-Lee/some-js-benchmark#readme"
+}
