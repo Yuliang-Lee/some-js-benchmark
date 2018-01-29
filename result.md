@@ -60,3 +60,20 @@ n = 1: (n === n >>> 0)  x 557,349,530 ops/sec ±0.94% (88 runs sampled)
 m = -2: (m > -1)        x 548,955,198 ops/sec ±1.12% (84 runs sampled)
 m = -2: (m === m >>> 0) x 561,871,240 ops/sec ±0.96% (84 runs sampled)
 ```
+
+# deep_clone
+
+better:
+```js
+lodash.cloneDeep();
+```
+
+result:
+```bash
+node version: v8.9.0, date: Mon Jan 29 2018 10:47:31 GMT+0800 (CST)
+Starting...
+2 tests completed.
+
+lodash.cloneDeep            x 20,112 ops/sec ±1.28% (80 runs sampled)
+JSON.parse + JSON.stringify x 10,371 ops/sec ±1.10% (86 runs sampled)
+```
