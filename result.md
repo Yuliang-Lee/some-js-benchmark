@@ -63,6 +63,12 @@ m = -2: (m === m >>> 0) x 561,871,240 ops/sec ±0.96% (84 runs sampled)
 
 # deep_clone
 
+There are any other methods of deep clone in browser environment，benchmark see [xlaoyu deep clone](https://jsperf.com/xlaoyu-deep-clone/1)
+
+referrer:
+1. https://dassur.ma/things/deep-copy/
+2. [Structured Clone](https://html.spec.whatwg.org/multipage/structured-data.html#structuredserializeinternal)
+
 better:
 ```js
 lodash.cloneDeep();
