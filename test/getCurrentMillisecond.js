@@ -1,21 +1,21 @@
 const Benchmark = require('benchmark');
 const benchmarks = require('beautify-benchmark');
 
-
-const suite = new Benchmark.Suite('s1');
-const n = 1;
+const suite = new Benchmark.Suite('get current millisecond');
 
 suite
-.add('concat', function() {
-  const r = '' + n;
+.add('Date.now()', function() {
+  Date.now();
 })
-.add('es6 template literals', function() {
-  const r = `${n}`;
+.add('+new Date()', function() {
+  +new Date();
 })
-.add('String constructor', function() {
-  const r = String(n);
+.add('new Date().getTime()', function() {
+  new Date().getTime();
 })
-
+.add('new Date().valueOf()', function() {
+  new Date().valueOf();
+})
 .on('cycle', function (event) {
   benchmarks.add(event.target);
 })
@@ -26,4 +26,4 @@ suite
   benchmarks.log();
   process.exit(0);
 })
-.run({ 'async': true, 'queued': true });
+.run({ 'async': false });

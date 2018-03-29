@@ -17,7 +17,7 @@ function foreachObjectFun(arr) {
 ```
 
 result:
-```bash
+```js
 node version: v8.9.0, date: Sun Dec 03 2017 12:46:50 GMT+0800 (CST)
 Starting...
 16 tests completed.
@@ -50,7 +50,7 @@ if (num === num >>> 0) {
 ```
 
 result:
-```bash
+```js
 node version: v8.9.0, date: Sun Dec 03 2017 13:20:00 GMT+0800 (CST)
 Starting...
 4 tests completed.
@@ -75,11 +75,51 @@ lodash.cloneDeep();
 ```
 
 result:
-```bash
+```js
 node version: v8.9.0, date: Mon Jan 29 2018 10:47:31 GMT+0800 (CST)
 Starting...
 2 tests completed.
 
 lodash.cloneDeep            x 20,112 ops/sec ±1.28% (80 runs sampled)
 JSON.parse + JSON.stringify x 10,371 ops/sec ±1.10% (86 runs sampled)
+```
+
+
+# get current millisecond
+
+better:
+```js
+Date.now();
+```
+
+result:
+```js
+  node version: v8.9.0, date: Thu Mar 29 2018 23:32:45 GMT+0800 (CST)
+  Starting...
+  4 tests completed.
+
+  Date.now()           x 12,049,196 ops/sec ±1.63% (84 runs sampled)
+  +new Date()          x  4,912,392 ops/sec ±1.29% (92 runs sampled)
+  new Date().getTime() x  6,854,320 ops/sec ±1.31% (89 runs sampled)
+  new Date().valueOf() x  7,242,938 ops/sec ±1.23% (90 runs sampled)
+```
+
+
+# number to string
+
+better:
+```js
+var num = 1;
+var string = `${num}`;
+```
+
+result:
+```js
+  node version: v8.9.0, date: Thu Mar 29 2018 23:35:32 GMT+0800 (CST)
+  Starting...
+  3 tests completed.
+
+  concat                x 187,476,577 ops/sec ±1.93% (82 runs sampled)
+  es6 template literals x 204,141,791 ops/sec ±2.11% (85 runs sampled)
+  String constructor    x  96,943,813 ops/sec ±2.06% (81 runs sampled)
 ```
