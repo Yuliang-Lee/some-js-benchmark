@@ -42,6 +42,42 @@ function foreachObjectFun(arr) {
 
   return newArr;
 }
+function forOfLoopObjectFun(arr) {
+  const newArr = [];
+  const obj = {};
+  for (const item of arr) {
+    if (!obj[item]) {
+      obj[item] = 1;
+      newArr.push(item);
+    }
+  };
+
+  return newArr;
+}
+function forLoopIndexFun(arr) {
+  const newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    const item = arr[i];
+    if (newArr.indexOf(item) === -1) {
+      newArr.push(item);
+    }
+  };
+
+  return newArr;
+}
+function forLoopObjectFun(arr) {
+  const newArr = [];
+  const obj = {};
+  for (let i = 0; i < arr.length; i++) {
+    const item = arr[i];
+    if (!obj[item]) {
+      obj[item] = 1;
+      newArr.push(item);
+    }
+  };
+
+  return newArr;
+}
 function foreachSetFun(arr) {
   const newArr = [];
   const obj = new Set();
@@ -61,12 +97,12 @@ function filterObjectFun(arr) {
   const obj = {};
   return arr.filter((val, i) => !obj[val] && (obj[val] = 1));
 }
-function reduceFun(arr) {
+function reduceIndexFun(arr) {
   const newArr = arr.reduce((newArr, current) => {
     if(newArr.indexOf(current) === -1) {
-      newArr.push(current); 
+      newArr.push(current);
     }
-    
+
     return newArr;
   }, []);
 
@@ -77,9 +113,9 @@ function reduceObjectFun(arr) {
   var newArr = arr.reduce((newArr, current) => {
     if(!obj[current]) {
       obj[current] = 1;
-      newArr.push(current); 
+      newArr.push(current);
     }
-    
+
     return newArr;
   }, []);
 }
@@ -89,53 +125,71 @@ function setFun(arr) {
 
 
 suite
-.add('simpleArr: foreachIndexOfFun', function() {
-  foreachIndexOfFun(simpleArr);
+.add('simpleArr: setFun', function() {
+  setFun(simpleArr);
 })
-.add('complexArr: foreachIndexOfFun', function() {
-  foreachIndexOfFun(complexArr);
+.add('simpleArr: forLoopIndexFun', function() {
+  forLoopIndexFun(simpleArr);
 })
-.add('simpleArr: foreachObjectFun', function() {
-  foreachObjectFun(simpleArr);
+.add('simpleArr: forLoopObjectFun', function() {
+  forLoopObjectFun(simpleArr);
 })
-.add('complexArr: foreachObjectFun', function() {
-  foreachObjectFun(complexArr);
+.add('simpleArr: forOfLoopObjectFun', function() {
+  forOfLoopObjectFun(simpleArr);
 })
 .add('simpleArr: foreachSetFun', function() {
   foreachSetFun(simpleArr);
 })
-.add('complexArr: foreachSetFun', function() {
-  foreachSetFun(complexArr);
+.add('simpleArr: foreachIndexOfFun', function() {
+  foreachIndexOfFun(simpleArr);
+})
+.add('simpleArr: foreachObjectFun', function() {
+  foreachObjectFun(simpleArr);
 })
 .add('simpleArr: filterIndexOfFun', function() {
   filterIndexOfFun(simpleArr);
 })
-.add('complexArr: filterIndexOfFun', function() {
-  filterIndexOfFun(complexArr);
-})
 .add('simpleArr: filterObjectFun', function() {
   filterObjectFun(simpleArr);
 })
-.add('complexArr: filterObjectFun', function() {
-  filterObjectFun(complexArr);
-})
-.add('simpleArr: reduceFun', function() {
-  reduceFun(simpleArr);
-})
-.add('complexArr: reduceFun', function() {
-  reduceFun(complexArr);
+.add('simpleArr: reduceIndexFun', function() {
+  reduceIndexFun(simpleArr);
 })
 .add('simpleArr: reduceObjectFun', function() {
   reduceObjectFun(simpleArr);
 })
-.add('complexArr: reduceObjectFun', function() {
-  reduceObjectFun(complexArr);
-})
-.add('simpleArr: setFun', function() {
-  setFun(simpleArr);
-})
 .add('complexArr: setFun', function() {
   setFun(complexArr);
+})
+.add('complexArr: forLoopIndexFun', function() {
+  forLoopIndexFun(complexArr);
+})
+.add('complexArr: forLoopObjectFun', function() {
+  forLoopObjectFun(complexArr);
+})
+.add('complexArr: forOfLoopObjectFun', function() {
+  forOfLoopObjectFun(complexArr);
+})
+.add('complexArr: foreachSetFun', function() {
+  foreachSetFun(complexArr);
+})
+.add('complexArr: foreachIndexOfFun', function() {
+  foreachIndexOfFun(complexArr);
+})
+.add('complexArr: foreachObjectFun', function() {
+  foreachObjectFun(complexArr);
+})
+.add('complexArr: filterIndexOfFun', function() {
+  filterIndexOfFun(complexArr);
+})
+.add('complexArr: filterObjectFun', function() {
+  filterObjectFun(complexArr);
+})
+.add('complexArr: reduceIndexFun', function() {
+  reduceIndexFun(complexArr);
+})
+.add('complexArr: reduceObjectFun', function() {
+  reduceObjectFun(complexArr);
 })
 .on('cycle', function (event) {
   benchmarks.add(event.target);

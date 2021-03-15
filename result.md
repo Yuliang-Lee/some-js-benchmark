@@ -1,43 +1,62 @@
 # array distinct
 
-better:
+results:
 ```js
-function foreachObjectFun(arr) {
-  const newArr = [];
-  const obj = {};
-  arr.forEach(item => {
-    if (!obj[item]) {
-      obj[item] = 1;
-      newArr.push(item);
-    }
-  });
+node version: v8.17.0, date: Mon Mar 15 2021 16:42:38 GMT+0800 (CST)
+  Starting...
+  22 tests completed.
 
-  return newArr;
-}
+  simpleArr: setFun              x 2,344 ops/sec ±0.52% (96 runs sampled)
+  simpleArr: forLoopIndexFun     x 53.52 ops/sec ±0.28% (69 runs sampled)
+  simpleArr: forLoopObjectFun    x 9,595 ops/sec ±0.28% (95 runs sampled)
+  simpleArr: forOfLoopObjectFun  x 9,330 ops/sec ±0.39% (94 runs sampled)
+  simpleArr: foreachSetFun       x 3,332 ops/sec ±0.11% (98 runs sampled)
+  simpleArr: foreachIndexOfFun   x 52.95 ops/sec ±0.14% (69 runs sampled)
+  simpleArr: foreachObjectFun    x 5,720 ops/sec ±0.33% (99 runs sampled)
+  simpleArr: filterIndexOfFun    x 27.09 ops/sec ±0.63% (49 runs sampled)
+  simpleArr: filterObjectFun     x 5,687 ops/sec ±0.55% (96 runs sampled)
+  simpleArr: reduceIndexFun      x 52.26 ops/sec ±0.44% (68 runs sampled)
+  simpleArr: reduceObjectFun     x 5,675 ops/sec ±0.26% (97 runs sampled)
+  complexArr: setFun             x 1,114 ops/sec ±0.52% (95 runs sampled)
+  complexArr: forLoopIndexFun    x  8.45 ops/sec ±0.48% (25 runs sampled)
+  complexArr: forLoopObjectFun   x 2,403 ops/sec ±0.39% (96 runs sampled)
+  complexArr: forOfLoopObjectFun x 2,337 ops/sec ±0.18% (98 runs sampled)
+  complexArr: foreachSetFun      x 1,882 ops/sec ±0.69% (96 runs sampled)
+  complexArr: foreachIndexOfFun  x  8.45 ops/sec ±0.51% (25 runs sampled)
+  complexArr: foreachObjectFun   x 2,020 ops/sec ±0.25% (97 runs sampled)
+  complexArr: filterIndexOfFun   x  6.61 ops/sec ±0.18% (21 runs sampled)
+  complexArr: filterObjectFun    x 1,876 ops/sec ±1.29% (96 runs sampled)
+  complexArr: reduceIndexFun     x  8.40 ops/sec ±0.55% (25 runs sampled)
+  complexArr: reduceObjectFun    x 2,000 ops/sec ±0.68% (98 runs sampled)
 ```
 
-result:
 ```js
-node version: v8.9.0, date: Sun Dec 03 2017 12:46:50 GMT+0800 (CST)
-Starting...
-16 tests completed.
+  node version: v14.15.2, date: Mon Mar 15 2021 16:35:23 GMT+0800 (中国标准时间)
+  Starting...
+  22 tests completed.
 
-simpleArr: foreachIndexOfFun  x 51.21 ops/sec ±2.29% (66 runs sampled)
-complexArr: foreachIndexOfFun x  8.18 ops/sec ±1.78% (25 runs sampled)
-simpleArr: foreachObjectFun   x 6,303 ops/sec ±6.35% (87 runs sampled)
-complexArr: foreachObjectFun  x 1,875 ops/sec ±1.25% (88 runs sampled)
-simpleArr: foreachSetFun      x 2,523 ops/sec ±3.10% (84 runs sampled)
-complexArr: foreachSetFun     x 1,582 ops/sec ±1.75% (86 runs sampled)
-simpleArr: filterIndexOfFun   x 26.96 ops/sec ±1.41% (48 runs sampled)
-complexArr: filterIndexOfFun  x  6.70 ops/sec ±1.92% (21 runs sampled)
-simpleArr: filterObjectFun    x 4,558 ops/sec ±1.17% (92 runs sampled)
-complexArr: filterObjectFun   x 1,498 ops/sec ±1.51% (90 runs sampled)
-simpleArr: reduceFun          x 52.12 ops/sec ±1.46% (67 runs sampled)
-complexArr: reduceFun         x  8.30 ops/sec ±1.61% (25 runs sampled)
-simpleArr: reduceObjectFun    x 4,540 ops/sec ±1.42% (86 runs sampled)
-complexArr: reduceObjectFun   x 1,559 ops/sec ±1.30% (88 runs sampled)
-simpleArr: setFun             x 1,588 ops/sec ±1.36% (89 runs sampled)
-complexArr: setFun            x   770 ops/sec ±1.35% (86 runs sampled)
+  simpleArr: setFun              x  4,606 ops/sec ±0.25% (95 runs sampled)
+  simpleArr: forLoopIndexFun     x  55.95 ops/sec ±0.70% (72 runs sampled)
+  simpleArr: forLoopObjectFun    x 12,609 ops/sec ±1.13% (91 runs sampled)
+  simpleArr: forOfLoopObjectFun  x 10,288 ops/sec ±0.43% (91 runs sampled)
+  simpleArr: foreachSetFun       x  3,304 ops/sec ±3.73% (96 runs sampled)
+  simpleArr: foreachIndexOfFun   x  55.34 ops/sec ±0.32% (71 runs sampled)
+  simpleArr: foreachObjectFun    x  8,043 ops/sec ±8.11% (92 runs sampled)
+  simpleArr: filterIndexOfFun    x  27.88 ops/sec ±0.70% (50 runs sampled)
+  simpleArr: filterObjectFun     x  7,788 ops/sec ±5.85% (93 runs sampled)
+  simpleArr: reduceIndexFun      x  55.02 ops/sec ±0.62% (71 runs sampled)
+  simpleArr: reduceObjectFun     x  7,945 ops/sec ±8.00% (94 runs sampled)
+  complexArr: setFun             x  2,415 ops/sec ±0.65% (96 runs sampled)
+  complexArr: forLoopIndexFun    x   9.00 ops/sec ±0.30% (27 runs sampled)
+  complexArr: forLoopObjectFun   x  1,920 ops/sec ±0.46% (97 runs sampled)
+  complexArr: forOfLoopObjectFun x  1,884 ops/sec ±0.49% (98 runs sampled)
+  complexArr: foreachSetFun      x  1,826 ops/sec ±0.84% (94 runs sampled)
+  complexArr: foreachIndexOfFun  x   8.67 ops/sec ±2.97% (26 runs sampled)
+  complexArr: foreachObjectFun   x  1,321 ops/sec ±0.75% (97 runs sampled)
+  complexArr: filterIndexOfFun   x   6.86 ops/sec ±0.51% (22 runs sampled)
+  complexArr: filterObjectFun    x  1,604 ops/sec ±0.18% (97 runs sampled)
+  complexArr: reduceIndexFun     x   9.01 ops/sec ±0.25% (27 runs sampled)
+  complexArr: reduceObjectFun    x  1,339 ops/sec ±0.36% (96 runs sampled)
 ```
 
 # number not negative
@@ -122,4 +141,21 @@ result:
   concat                x 187,476,577 ops/sec ±1.93% (82 runs sampled)
   es6 template literals x 204,141,791 ops/sec ±2.11% (85 runs sampled)
   String constructor    x  96,943,813 ops/sec ±2.06% (81 runs sampled)
+```
+
+# array functions
+
+results:
+```js
+  node version: v14.15.2, date: Mon Mar 15 2021 17:05:59 GMT+0800 (中国标准时间)
+  Starting...
+  7 tests completed.
+
+  10000 push       x 45,176 ops/sec ±1.88% (87 runs sampled)
+  []操作             x 43,958 ops/sec ±1.40% (86 runs sampled)
+  splice add       x 36,650 ops/sec ±1.02% (88 runs sampled)
+  unshift          x 44,129 ops/sec ±0.66% (90 runs sampled)
+  splice add first x 32,692 ops/sec ±0.56% (90 runs sampled)
+  forEach push     x  3,005 ops/sec ±5.52% (89 runs sampled)
+  map              x 11,645 ops/sec ±11.87% (89 runs sampled)
 ```
