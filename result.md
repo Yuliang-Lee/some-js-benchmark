@@ -159,3 +159,18 @@ results:
   forEach push     x  3,005 ops/sec ±5.52% (89 runs sampled)
   map              x 11,645 ops/sec ±11.87% (89 runs sampled)
 ```
+
+
+# lodash vs vanilla
+
+results:
+
+```js
+  node version: v14.15.2, date: Mon Mar 22 2021 17:35:06 GMT+0800 (中国标准时间)
+  Starting...
+  3 tests completed.
+
+  one level array spread clone     x 250,578 ops/sec ±1.33% (87 runs sampled)
+  one level array lodash cloneDeep x   1,586 ops/sec ±0.53% (95 runs sampled)
+  one level array lodash clone     x  28,193 ops/sec ±0.46% (96 runs sampled)
+```

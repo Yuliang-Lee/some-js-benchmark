@@ -8,7 +8,7 @@
     "benchmark": "^2.1.4"
   },
   "devDependencies": {
-    "lodash": "^4.17.4"
+    "lodash": "^4.17.21"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
