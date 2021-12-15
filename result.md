@@ -174,3 +174,40 @@ results:
   one level array lodash cloneDeep x   1,586 ops/sec ±0.53% (95 runs sampled)
   one level array lodash clone     x  28,193 ops/sec ±0.46% (96 runs sampled)
 ```
+
+# string concat
+
+better:
+```js
+let str1 = 'a'
+let str2 = 'b'
+let str3 = str1 + str2
+```
+
+results:
+
+```js
+  node version: v14.17.0, date: Wed Dec 15 2021 20:02:33 GMT+0800 (中国标准时间)
+  Starting...
+  2 tests completed.
+
+  concat     x 415 ops/sec ±1.34% (88 runs sampled)
+  array join x 171 ops/sec ±2.00% (78 runs sampled)
+```
+
+# shallow clone
+
+results:
+
+```js
+  node version: v14.17.0, date: Wed Dec 15 2021 20:14:35 GMT+0800 (中国标准时间)
+  Starting...
+  6 tests completed.
+
+  spread operator|diffValues x 1,983 ops/sec ±0.60% (95 runs sampled)
+  spread operator|sameValues x 2,170 ops/sec ±0.38% (93 runs sampled)
+  Object.assign| diffValues  x 3,493 ops/sec ±2.87% (91 runs sampled)
+  Object.assign| sameValues  x 3,290 ops/sec ±4.33% (89 runs sampled)
+  for in| diffValues         x 7,507 ops/sec ±3.53% (91 runs sampled)
+  for in| sameValues         x 7,984 ops/sec ±0.64% (93 runs sampled)
+```
