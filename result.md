@@ -95,12 +95,13 @@ lodash.cloneDeep();
 
 result:
 ```js
-node version: v8.9.0, date: Mon Jan 29 2018 10:47:31 GMT+0800 (CST)
-Starting...
-2 tests completed.
+  node version: v14.17.0, date: Thu Dec 16 2021 17:28:39 GMT+0800 (中国标准时间)
+  Starting...
+  3 tests completed.
 
-lodash.cloneDeep            x 20,112 ops/sec ±1.28% (80 runs sampled)
-JSON.parse + JSON.stringify x 10,371 ops/sec ±1.10% (86 runs sampled)
+  lodash.cloneDeep            x  28,475 ops/sec ±0.94% (94 runs sampled)
+  JSON.parse + JSON.stringify x  27,361 ops/sec ±0.97% (93 runs sampled)
+  function return             x 323,077 ops/sec ±0.84% (93 runs sampled)
 ```
 
 
