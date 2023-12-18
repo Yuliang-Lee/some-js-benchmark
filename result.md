@@ -104,6 +104,22 @@ result:
   function return             x 323,077 ops/sec ±0.84% (93 runs sampled)
 ```
 
+# lodash vs native js
+
+Normally, native js will have higher performance.
+
+```js
+  node version: v20.9.0, date: Mon Dec 18 2023 17:42:16 GMT+0800 (Central Standard Time)
+  Starting...
+  5 tests completed.
+
+  one level array spread clone     x    154,230 ops/sec ±4.46% (69 runs sampled)
+  one level array lodash cloneDeep x      1,245 ops/sec ±1.06% (88 runs sampled)
+  one level array lodash clone     x     20,373 ops/sec ±1.39% (88 runs sampled)
+  round with native Math Object    x 99,321,501 ops/sec ±2.77% (89 runs sampled)
+  round with lodash round          x    647,745 ops/sec ±1.20% (86 runs sampled)
+```
+
 
 # get current millisecond
 
