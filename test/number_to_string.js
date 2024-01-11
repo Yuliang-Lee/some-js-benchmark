@@ -15,7 +15,12 @@ suite
 .add('String constructor', function() {
   const r = String(n);
 })
-
+.add('Stirng to number with Number', function() {
+  const r = Number('1')
+})
+.add('Stirng to number with plus', function() {
+  const r = +'1'
+})
 .on('cycle', function (event) {
   benchmarks.add(event.target);
 })
