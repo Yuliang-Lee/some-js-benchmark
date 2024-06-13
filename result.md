@@ -228,3 +228,19 @@ results:
   for in| diffValues         x 7,507 ops/sec ±3.53% (91 runs sampled)
   for in| sameValues         x 7,984 ops/sec ±0.64% (93 runs sampled)
 ```
+
+# loop
+
+results:
+
+```js
+ node version: v20.9.0, date: Thu Jun 13 2024 14:40:44 GMT+0800 (China Standard Time)
+  Starting...
+  5 tests completed.
+
+  for index & push       x 680 ops/sec ±1.77% (93 runs sampled)
+  for index & assignment x 637 ops/sec ±0.38% (90 runs sampled)
+  for of                 x 589 ops/sec ±2.89% (87 runs sampled)
+  forEach                x 343 ops/sec ±3.44% (88 runs sampled)
+  map                    x 723 ops/sec ±0.55% (92 runs sampled)
+```
