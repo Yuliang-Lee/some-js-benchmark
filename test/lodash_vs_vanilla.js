@@ -17,6 +17,15 @@ const getRamdomArr = (i, c) => {
 const complexArr = getRamdomArr(10000, 10000);
 const simpleArr = getRamdomArr(10000, 1000);
 
+// init object
+const diffValues = {}
+const sameValues = {}
+for (let i = 0; i < 1000; i++) {
+  diffValues[`${Math.random()}-key`] = Math.random();
+}
+for (let i = 0; i < 1000; i++) {
+  sameValues[`${Math.random()}-key`] = 'test string'
+}
 
 suite
 // .add('one level array spread clone', function() {
@@ -28,13 +37,22 @@ suite
 // .add('one level array lodash clone', function() {
 //   const n = _.clone(simpleArr)
 // })
-.add('round with native Math Object', function() {
-  const n = Math.random() * 100;
-  return Math.round(n, 2);
+// .add('round with native Math Object', function() {
+//   const n = Math.random() * 100;
+//   return Math.round(n, 2);
+// })
+// .add('round with lodash round', function() {
+//   const n = Math.random() * 100;
+//   return _.round(n, 2);
+// })
+.add('assign: object.assign', function() {
+  return Object.assign({}, diffValues, sameValues);
 })
-.add('round with lodash round', function() {
-  const n = Math.random() * 100;
-  return _.round(n, 2);
+.add('assign: spread operator', function() {
+  return { ...diffValues, ...sameValues };
+})
+.add('assign: lodash assign', function() {
+  return _.assign({}, diffValues, sameValues);
 })
 .on('cycle', function (event) {
   benchmarks.add(event.target);
